@@ -1,5 +1,5 @@
-import type { HookOptions } from "use-sound";
 import useSound_ from "use-sound";
+import type { HookOptions } from "../../node_modules/use-sound/dist/types.d.ts";
 import { useMediaQuery } from "./use-media-query";
 
 export function useSound(path: string, options?: HookOptions) {
