@@ -1,0 +1,31 @@
+/** biome-ignore-all lint/suspicious/noBitwiseOperators: shh! */
+export function hash(name: string) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    const character = name.charCodeAt(i);
+    hash = (hash << 5) - hash + character;
+    hash &= hash; // Convert to 32bit integer
+  }
+  return Math.abs(hash);
+}
+
+export function getDigit(number: number, ntn: number) {
+  return Math.floor((number / 10 ** ntn) % 10);
+}
+
+export function getUnit(number: number, range: number, index?: number) {
+  const value = number % range;
+
+  if (index && getDigit(number, index) % 2 === 0) {
+    return -value;
+  }
+  return value;
+}
+
+export function getRandomColor(
+  number: number,
+  colors: string[],
+  range: number
+) {
+  return colors[number % range];
+}
