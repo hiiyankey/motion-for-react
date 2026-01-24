@@ -17,15 +17,10 @@ export default function Page() {
               onClick={() => setActiveIndex(index)}
               type="button"
             >
-              <span
-                className="inline-block text-14 data-[is-active=true]:text-white dark:data-[is-active=true]:text-black"
-                data-is-active={activeIndex === index}
-              >
-                {title}
-              </span>{" "}
+              <span className="inline-block text-14">{title}</span>{" "}
               {activeIndex === index && (
                 <motion.span
-                  className="absolute inset-0 -z-20 rounded-full bg-black dark:bg-white"
+                  className="absolute inset-0 -z-10 rounded-full bg-blue"
                   layoutId="Indicator"
                 />
               )}
